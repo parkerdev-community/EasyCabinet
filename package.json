@@ -4,6 +4,13 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "dev": "lerna run dev --parallel --no-bail",
+    "build": "npm run build:server && npm run build:client && npm run build:admin",
+    "build:client": "npm run build -w cabient-client",
+    "build:server": "npm run build -w cabient-server",
+    "start": "lerna run start --parallel --no-bail"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AuroraTeam/EasyCabinet.git"
@@ -13,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/AuroraTeam/EasyCabinet/issues"
   },
-  "homepage": "https://github.com/AuroraTeam/EasyCabinet#readme"
+  "homepage": "https://github.com/AuroraTeam/EasyCabinet#readme",
+  "devDependencies": {
+    "lerna": "^8.1.3"
+  }
 }
